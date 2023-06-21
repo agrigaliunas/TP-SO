@@ -5,9 +5,9 @@ IS_BATCH=true
 
 
 # Verificar si se reciben los parametros necesarios
-if [ $# == 0 && !($1 =~ ^[0-9]+$) ]; then
+if [ $# -eq 0 ] && ! [[ $1 =~ ^[0-9]+$ ]]; then
     IS_BATCH=false
-    
+
 elif [ $# -ne 1 ]; then
     
     echo "Error en llamada! Usar: $0 [número a calcular]"
