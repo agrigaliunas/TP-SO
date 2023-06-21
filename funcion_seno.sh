@@ -3,10 +3,8 @@
 VERSION="1.0"
 IS_BATCH=true
 
-set -x
-
 # Verificar si se reciben los parametros necesarios
-if [ $# -eq 0 ] && [[ $2 =~ ^[0-9]+$ ]]; then
+if [ $# -eq 0 ]; then
     IS_BATCH=false
 
 elif [ $# -ne 1 ]; then
