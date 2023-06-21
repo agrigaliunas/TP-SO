@@ -8,18 +8,18 @@ set -x
 # Verificar si se reciben los parametros necesarios
 if [ $# == 0 ]; then
     IS_BATCH=false
-elif [ $# -ne 1 || $1=~ ^[0-9]+$ ]; then
+elif [ $# -ne 1 ]; then
     echo "Error en llamada! Usar: $0 [número a calcular]"
     exit 1
 fi
 
 ejecutar() {
-    if ! $1; then
+    numero=""
+    while ! [[ $numero =~ ^[0-9]+$ ]]; do
         echo "Ingrese un número: "
         read numero
-    else
-        numero=$2
-    fi
+    done
+}
 
     # Tomamos usuarios conectados
     usuarios=$(obtener_usuarios)
