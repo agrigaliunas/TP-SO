@@ -35,6 +35,10 @@ while true; do
             ;;
         2)
             read -p "Ingrese un número: " numero
+            while ! [[ $numero =~ ^[0-9]+$ ]]; do
+                echo "Ingrese un número: "
+                read numero
+            done
             chmod +x funcion_seno.sh
 	    ./funcion_seno.sh $numero
             read -p "Presione Enter para continuar..."
