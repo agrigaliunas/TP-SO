@@ -34,7 +34,8 @@ ejecutar() {
 calcular_seno(){
     pi=`echo "h=10;4*a(1)" | bc -l`
     seno=$(echo "s($1*$pi / 180)" | bc -l)
-    echo "$seno"
+    seno_formateado=`printf "%.2f" $seno`
+    echo "$seno_formateado"
 }
 
 obtener_usuarios(){
