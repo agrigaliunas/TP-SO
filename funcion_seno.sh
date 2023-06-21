@@ -8,7 +8,7 @@ set -x
 # Verificar si se reciben los parametros necesarios
 if [ $# == 0 ]; then
     IS_BATCH=false
-elif [ $# -ne 1 ]; then
+elif [ $# -ne 1 || $1=~ ^[0-9]+$ ]; then
     echo "Error en llamada! Usar: $0 [número a calcular]"
     exit 1
 fi
