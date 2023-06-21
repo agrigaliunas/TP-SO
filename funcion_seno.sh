@@ -3,6 +3,8 @@
 VERSION="1.0"
 IS_BATCH=true
 
+set -x
+
 # Verificar si se reciben los parametros necesarios
 if [ $# == 0 ]; then
     IS_BATCH=false
@@ -30,9 +32,9 @@ ejecutar() {
 }
 
 calcular_seno(){
-    seno=$(echo "s($1*3.14159265 / 180)" | bc -l)
-    seno_formateado=$(echo "$seno" | awk '{printf "%.0f", $0}')
-    echo "$seno_formateado"
+    pi=`echo "h=10;4*a(1)" | bc -l`
+    seno=$(echo "s($1*$pi / 180)" | bc -l)
+    echo "$seno"
 }
 
 obtener_usuarios(){
